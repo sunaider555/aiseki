@@ -1,0 +1,715 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:#222222;
+	font-family:"メイリオ";
+	font-size: 14px;
+	color:#333;
+	min-width:1040px;
+}
+h1 {
+	font-size:12px;
+	font-weight:normal;
+	margin:0px;
+	text-align: center;
+	line-height: 26px;
+	color: #FFF;
+	font-family:"メイリオ";
+}
+
+img {
+	border:0;
+}
+#clear {
+	clear:both;	
+}
+#base {
+	position: relative;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+#fixedBox {
+	margin: auto;
+	z-index: 100;
+	background-color: #222;
+}
+#header {
+	width: 1024px;
+	margin: auto;
+}
+.img_left {
+	float:left;
+}
+.img_right {
+	float:right;
+}
+ul#menu {
+	list-style:none;
+	margin:0;
+	padding:0;
+	float:left;
+	width: 885px;
+	font-size: 12px;
+	height: 60px;
+}
+ul#menu li {
+	float:left;
+	display:block;
+	text-align: center;
+	line-height:28px;
+	margin:15px 0px;
+}
+.menu_left {
+	width:109px;
+	border-right:solid 1px #fff;
+}
+.menu_right {
+	width:109px;
+	border-left:solid 1px #fff;
+}
+.menu_shop {
+	width:95px;
+}
+ul#menu li a {
+	color:#FFF;
+	text-decoration:none;
+}
+ul#menu li a:hover {
+	color:#CCBA66;
+	text-decoration:none;
+}
+#slider_area {
+	height: 650px;
+	background: #f2f2f2;
+}
+#main_bg {
+	background-color: #FFF;
+}
+#main {
+	width:1024px;
+	margin:auto;
+}
+#top_contents1 {
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 30px;
+	border-bottom: solid 1px #b3b3b3;
+	margin: auto;
+	width: 989px;
+}
+#top_contents1 h2 {
+	line-height:42px;
+	font-weight:normal;
+	font-size: 24px;
+	line-stacking: 1px;
+}
+.top_contents1-2 {
+	font-size: 13px;
+	letter-spacing: 2px;
+	line-height: 2em;
+}
+#line1 {
+	width: 120px;
+	margin: 0px auto 42px;
+	border-bottom: solid 5px #cccccc;
+}
+#shop_box {
+	width: 989px;
+	margin: 0px auto 55px;
+	background-color: #f2f2f2;
+	height: 254px;
+}
+#shop_box p {
+	margin:5px 0px 0px 0px;
+}
+#shop_right {
+	float: left;
+	margin-left: 35px;
+	font-size: 12px;
+	padding-top: 15px;
+}
+#shop_button {
+	margin-top: 20px;
+}
+#shop_sns {
+	float: left;
+	width: 146px;
+}
+#shop_sns img {
+	float: left;
+}
+#area_line {
+	width: 989px;
+	margin: auto;
+	border-bottom: solid 1px #b3b3b3;
+}
+
+#main_bg2 {
+	background-color: #f2f2f2;
+}
+#bg_under {
+}
+#staff_box {
+	width: 989px;
+	margin: auto;
+	height: 255px;
+	padding-bottom: 60px;
+}
+#staff_right {
+	margin-left: 35px;
+	float: left;
+}
+#staff_text {
+	margin: 30px 0px;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 36px;
+}
+#footer {
+	padding-top: 70px;
+	width: 1024px;
+	margin: auto;
+	text-align: center;
+	color: #FFF;
+	font-size: 12px;
+}
+#footer img {
+	margin:0px 5px;
+}
+#footer p {
+	margin:30px 0px;
+}
+#footer p a {
+	text-decoration:none;
+	color:#FFF;
+}
+#footer p a:hover {
+	text-decoration:none;
+	color:#333;
+}
+
+ul#menu2 {
+	list-style:none;
+	margin:0px auto;
+	padding:0px;
+	background-color:#FFF;
+	width: 920px;
+}
+ul#menu2 li {
+	float:left;
+	padding:22px 10px;
+}
+ul#menu2 li a {
+	text-decoration:none;
+	color:#333;
+	padding:22px 0px 22px 0px;
+}
+ul#menu2 li a:hover {
+	text-decoration:none;
+	color:#A8A866;
+	border-bottom:solid 3px #a8a866;
+	padding:22px 0px 22px 0px;
+}
+#base2 {
+	position: relative;
+}
+.fixed2 {
+    position: fixed;
+    top: 86px;
+    width: 100%;
+    z-index: 10000;
+}
+#fixedBox2 {
+	margin: auto;
+	z-index: 100;
+	border-top: solid 6px #a8a866;
+	border-bottom: solid 1px #999999;
+	background-color: #FFF;
+	margin-bottom: 10px;
+}
+.font20 {
+	font-size: 20px;
+	letter-spacing: 2px;	
+}
+.font42 {
+	font-size: 42px;
+}
+.font16 {
+	font-size: 16px;
+}
+
+#recarea {
+	width: 989px;
+	margin: auto;
+}
+#recarea h2 {
+	border-bottom:solid 1px #666;
+	font-size: 22px;
+	letter-spacing: 2px;
+}
+#rec_text1 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+#rec_line {
+	border-bottom: solid 1px #666;
+	margin-bottom: 60px;
+}
+
+#recarea2-1 {
+	margin-top: 10px;
+}
+#recarea2-1 h2 {
+	border-bottom:solid 1px #666;
+	color: #A8A866;
+	font-size: 24px;
+	letter-spacing: 2px;
+}
+#recarea2-1 p {
+	line-height:28px;
+	font-size: 16px;
+}
+
+#recarea2 {
+	margin-top: 80px;
+}
+#recarea2 h2 {
+	border-bottom:solid 1px #666;
+	color: #A8A866;
+	font-size: 24px;
+	letter-spacing: 2px;
+}
+#recarea2 p {
+	line-height:28px;
+	font-size: 16px;
+}
+#rec_comment_box {
+	margin-bottom: 30px;
+}
+#comment_right {
+	float: left;
+	margin-left: 30px;
+}
+#comment_right h3 {
+	color: #DF0000;
+	margin: 0;
+	font-size: 24px;
+}
+#comment_right p {
+	margin: 0;
+}
+#concept_box {
+	width: 274px;
+	border: solid 1px #A8A866;
+	padding: 10px;
+	float: left;
+	margin-right: 30px;
+	height: 350px;
+}
+#concept_box h3 {
+	color:#A8A866;
+	padding-left: 10px;
+	border-bottom: dotted 1px #A8A866;
+	font-size: 24px;
+	margin: 0;
+	font-weight: normal;
+}
+#concept_box p {
+	font-size:14px;
+}
+#oyakusoku_box {
+	width: 50%;
+	float: left;
+	margin-bottom: 45px;
+}
+#oyakusoku_right {
+	float: left;
+	margin-left: 15px;
+}
+#oyakusoku_right h3 {
+	margin:0px;
+	font-size: 20px;
+}
+#oyakusoku_right p {
+	margin:0px;
+	font-size: 12px;
+}
+#shop_data {
+	margin:0px;
+	border-bottom: dotted 1px #666;
+	line-height: 65px;
+}
+#shopdata_left {
+	float: left;
+	width: 125px;
+}
+#shopdata_right {
+	float: left;
+}
+#floor {
+	margin-bottom: 30px;
+
+}
+#floor img {
+	margin: 0px 8px 15px 0px;
+	width:156px;
+}
+#tencho_area {
+	margin-bottom: 30px;
+}
+.tencho_name {
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+	font-weight: 600;
+}
+#tencho_comment {
+	float: left;
+	margin-left: 30px;
+	line-height: 28px;
+}
+#main_bg3 {
+	background-color: #cccccc;
+	text-align: center;
+	padding: 35px 0px;
+}
+/* 華火ページ */
+#hanabi_bg {
+	background-image: url(../img/hanabi_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.hanabi1 {
+	font-size: 72px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.hanabi_font1 {
+	color: #A8A866;
+}
+.hanabi_font2 {
+	color: #A8A866;
+	font-size: 36px;
+	font-weight: bold;
+}
+/* 151aページ */
+#a151_bg {
+	background-image: url(../img/151a_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.a151 {
+	font-size: 72px;
+	color: #F60;
+	font-weight: bold;
+}
+
+/* 風雅ページ */
+#fuga_bg {
+	background-image: url(../img/fuga_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.fuga1 {
+	font-size: 72px;
+	color: #33CD99;
+	font-weight: bold;
+}
+
+/* eightページ */
+#eight_bg {
+	background-image: url(../img/eight_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.eight1 {
+	font-size: 72px;
+	color: #52CCFF;
+	font-weight: bold;
+}
+
+/* chulamページ */
+#chulam_bg {
+	background-image: url(../img/chula_m_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.chulam1 {
+	font-size: 72px;
+	color: #36F;
+	font-weight: bold;
+}
+
+/* azitoページ */
+#azito_bg {
+	background-image: url(../img/hanabi_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.azito1 {
+	font-size: 72px;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+/* chulatページ */
+#chulat_bg {
+	background-image: url(../img/chula_t_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.chulat1 {
+	font-size: 72px;
+	color: #FF5285;
+	font-weight: bold;
+}
+#comment_right2 {
+	float: left;
+	margin-left: 30px;
+}
+#comment_right2 h3 {
+	color: #FF5285;
+	margin: 0;
+	font-size: 24px;
+}
+#comment_right2 p {
+	margin: 0;
+}
+/* staffページ */
+#staff_bg {
+	background-image: url(../img/staff_bg.jpg);
+	height: 277px;
+	background-position: 50% 0%;
+}
+.staff1 {
+	font-size: 72px;
+	color: #FF0000;
+	font-weight: bold;
+}
+ul#menu3 {
+	list-style:none;
+	margin:0px auto;
+	padding:0px;
+	background-color:#FFF;
+	width: 920px;
+}
+ul#menu3 li {
+	float:left;
+	padding:22px 6px;
+}
+ul#menu3 li a {
+	text-decoration:none;
+	color:#333;
+	padding:22px 0px 22px 0px;
+}
+ul#menu3 li a:hover {
+	text-decoration:none;
+	color:#A8A866;
+	border-bottom:solid 3px #a8a866;
+	padding:22px 0px 22px 0px;
+}
+#staff_bosyu {
+	margin-top: 15px;
+}
+#staff_bosyu td {
+	border-bottom:dotted 1px #666;
+	padding: 15px;
+}
+#staffarea2 {
+	margin-top: 10px;
+}
+#staffarea2 h2 {
+	border-bottom:solid 1px #666;
+	color: #111;
+	font-size: 24px;
+}
+#staffarea2 p {
+	line-height:28px;
+	font-size: 16px;
+}
+.staff_color {
+	color: #5299FF;
+}
+.staff_red {
+	color: #F00;
+	font-size: 36px;
+}
+.staff_font1 {
+	font-size: 32px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.staff_font2{
+	font-size: 24px;
+	color: #A8A866;
+	letter-spacing: 2px;	
+}
+.staff_color {
+	color: #69A7FF;
+	letter-spacing: 2px;	
+}
+.staff_color2 {
+	color: #BF52FF;
+	letter-spacing: 2px;	
+}
+.staff_color3 {
+	color: #FF52BF;
+	letter-spacing: 2px;	
+}
+.staff_color4 {
+	color: #F90;
+	letter-spacing: 2px;	
+}
+#staff_area_waku {
+	width: 720px;
+	padding: 35px 0px;
+	border-bottom: solid 1px #666;
+}
+/*201506追加*/
+.azito_base {
+	width: 1024px;
+	margin: 0 auto;
+	text-align: left;
+}
+.azito_base p {
+	font-size: 16px;
+	line-height: 1.7em;
+	letter-spacing: 1px;
+}
+.azito_space {
+	margin-top: 50px;
+}
+
+.azito01 {
+	background: #9952cc;
+}
+.azito02 {
+	width: 1024px;
+	height: 70px;
+	font-size: 24px;
+	padding: 20px 0px;
+	color: #FFF;
+	text-align: left;
+	margin: 0 auto;
+	font-family: "ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;
+	line-height: 1.5em;
+	letter-spacing: 1px;
+}
+.azito02_1 {
+	width: 1024px;
+	height: 70px;
+	font-size: 45px;
+	padding: 20px 0px;
+	color: #FFF;
+	text-align: left;
+	margin: 0 auto;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	line-height: 1.5em;
+	letter-spacing: 1px;
+}
+
+.azito03 {
+	float: left;
+}
+
+
+.azito04 {
+	font-size: 18px;
+	text-align: left;
+	line-height: 2.0em;
+	margin-top: 50px;
+}
+
+.azito05 {
+	font-size: 30px;
+	color: #000;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.azito06 {
+	font-size: 80px;
+	color: #e8004f;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	margin-bottom: 3px;
+	letter-spacing: 2px;
+	font-weight: bolder;
+}
+.azito07 {
+	font-size: 40px;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+.azito08 {
+	background: #f2f2f2;
+	padding: 30px 10px;
+}
+.azito09 {
+	background-color: #9952cc;
+	color: #FFF;
+	width: 200px;
+	text-align: center;
+	padding: 3px;
+	border-radius: 3px;
+	font-size: 16px;
+	float: left;
+	margin-right: 20px;
+}
+
+.azito010 {
+	font-size: 36px;
+	margin-top: 40px;
+	margin-bottom: 3px;
+	font-family: "ＭＳ Ｐ明朝", serif;
+	color: #000;
+}
+
+.azito011 {
+	font-size: 35px;
+	margin-top: 30px;
+	font-family: "ＭＳ Ｐ明朝", serif;
+	color: #000;
+}
+.azito012 {
+	margin-top: 5px;
+}
+.azito013 {
+	font-size: 16px;
+}
+.azito014 {
+	font-size: 20px;
+	color: #e8004f;
+}
+
+
+
+/*追加分CSS*/
+
+.rec_txt01 {
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 2em;
+}
+.rec_txt02 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 2em;	
+}
+
+.indoor_area {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.staff_txt {
+	letter-spacing: 2px;
+	font-size: 24px;
+}

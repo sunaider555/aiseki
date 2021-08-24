@@ -1,0 +1,159 @@
+#wrap {
+	width: 300px;
+	margin: 0 auto;
+}
+.effect {
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+.effect li {
+	float: left;
+	width: 33%;
+	transition: .8s;
+	padding: 15px;
+	list-style: none;
+}
+.effect li img {
+	width: 100%;
+	margin-bottom:15px;
+}
+
+.btn-primary2 btn {
+	float: left;
+	width: 100%;
+	transition: .8s;
+	padding: 15px;
+	list-style: none;
+}
+.ef-zoom {
+	transform: scale(0, 0);
+	-webkit-transform: scale(0, 0);
+}
+.zoom {
+	transform: scale(1, 1);
+	-webkit-transform: scale(1, 1);
+}
+.error_txt {
+	padding-bottom:60px;
+}
+
+/*===============================================
+●smart.css  画面の横幅が640pxまで
+===============================================*/
+@media screen and (max-width:640px){
+.effect li {
+	width: 100%;
+	transition: .8s;
+	padding: 15px;
+	list-style: none;
+
+}
+.effect li img {
+	width: 100%;
+	margin-bottom:15px;
+}
+
+～以下、画面の横幅が640pxまでの場合のスタイル記入～
+}
+
+.photo02 {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+.photo02 img {
+	display: block;
+	margin: 0 auto;
+	width:100%;
+	border: solid 1px #ededed;
+	border-radius: 0px;
+}
+
+.news_list_box {
+	margin: 20px 0px;
+	padding: 10px 0px;
+	border-bottom: 1px #CCCCCC solid;
+}
+.news_list_ymd {
+	font-size: 14px;
+	letter-spacing: 2px;
+	margin-bottom: 7px;
+}
+.news_list_title {
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-bottom: 7px;
+	font-weight: 700;
+	color: #F66;	
+}
+.news_list_main {
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-bottom: 7px;
+}
+.news_list_img {
+	margin: 7px 0px;
+	width: 80%;
+}
+.news_list_img img {
+	width: 240px;
+}
+.thum_photo_h {
+	overflow: hidden;
+	height: 150px;
+}
+.thum_photo_h img {
+	width: 100%;	
+}
+.thum_photo_w {
+	overflow: hidden;
+	height: 150px;
+}
+.thum_photo_w img {
+	height: 100%;	
+}
+
+ul#icon {
+	list-style: none;
+	border: 0;
+}
+ul#icon li {
+	width: 31%;
+	float: left;
+	border: solid 1px #ccc;
+	margin: 1%;
+	padding: 1%;
+	height: 160px;
+}
+@media screen and (max-width:640px){
+ul#icon li {
+	width: 48%;
+	float: left;
+	border: solid 1px #ccc;
+	margin: 1%;
+	padding: 1%;
+	height: 180px;
+}
+}
+ul#shop {
+	list-style: none;
+	border: 0;
+}
+ul#shop li {
+	width: 31%;
+	float: left;
+	padding: 1%;
+}
+ul#shop li img {
+	width: 100%;
+}
+@media screen and (max-width:640px){
+ul#shop li {
+	width: 98%;
+	margin: 1%;
+	padding: 1%;
+
+}
+}

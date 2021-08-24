@@ -1,0 +1,1963 @@
+/*
+Copyright (c) 2018, Monochrome Design Studio. All rights reserved.
+*/
+
+body {
+	font-family: "Noto Sans Japanese";
+	-webkit-text-size-adjust: 100%;
+	background-color: #fff;
+	color: #333;
+	letter-spacing: 2px;
+	line-height: 1.5em;
+	font-weight: 300;
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+p {
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 10px;
+	text-align: center;
+}
+
+h2 {
+    position: relative;
+	font-size: 100%;
+	font-family: 'Montserrat', sans-serif;
+    color: #333;
+	letter-spacing: 5px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h3 {
+    position: relative;
+	font-size: 90%;
+	font-family: 'Montserrat', sans-serif;
+    color: #333;
+	letter-spacing: 5px;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+h4 {
+    position: relative;
+	font-size: 150%;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+    color: #000;
+	letter-spacing: 5px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+#hd {
+	text-align: right;
+	font-size: 10px;
+}
+
+.h_space {
+    margin-top: 40px;
+}
+
+#p_navi {
+	text-align: left;
+	font-size: 10px;
+	margin-left: 5px;
+}
+
+.clear {
+	clear: both;　/*floatの解除*/
+}
+
+/*-----------------------------------------------------------------
+アニメーション
+-----------------------------------------------------------------*/
+
+/* 画面外にいる状態 */
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 50px);
+	transition : all 1000ms;
+}
+ 
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+}
+
+
+
+/*-----------------------------------------------------------------
+ヘッダー部分
+-----------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) {
+/* Toggle Button */
+#nav-toggle {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 101;
+}
+#nav-toggle div {
+    position: relative;
+}
+#nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+	background: -webkit-gradient(linear, left top, right bottom, from(#000000), to(#000000));
+	background: -moz-linear-gradient(left, #000000, #000000);
+	background: linear-gradient(left, #000000, #000000);
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+    top: 0;
+}
+#nav-toggle span:nth-child(2) {
+    top: 10px;
+}
+#nav-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+
+#top-head,
+.inner {
+	width: 100%;
+	padding: 0;
+}
+#top-head {
+	top: 0;
+	position: fixed;
+	margin-top: 0;
+	z-index: 1000;
+	transition: .7s;
+}
+/* Fixed reset */
+#top-head.fixed {
+	padding-top: 0;
+	background: transparent;
+}
+#mobile-head {
+	background: #fff;
+	opacity: 1;
+	width: 100%;
+	height: 40px;
+	z-index: 999;
+	position: relative;
+	border-bottom: 1px #cccccc solid;
+}
+#mobile-head img {
+	padding-top: 5px;
+	padding-left: 0;
+	margin: 0 auto;
+	height: 33px;
+}
+
+#top-head.fixed .logo,
+#top-head .logo {
+	position: absolute;
+	left: 5px;
+	top: 0px;
+	color: #000;
+	font-size: 26px;
+	margin: 0 auto;
+}
+
+#global-nav {
+	position: absolute;
+	/* 開いてないときは画面外に配置 */
+	top: -515px;
+	background-color: rgba(255,255,255,1);
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+#global-nav ul {
+	list-style: none;
+	position: static;
+	right: 0;
+	bottom: 0;
+	font-size: 14px;
+}
+#global-nav ul li {
+	float: none;
+	position: static;
+}
+#top-head #global-nav ul li a,
+#top-head.fixed #global-nav ul li a {
+	width: 100%;
+	display: block;
+	color: #000000;
+	padding: 15px 0;
+}
+#nav-toggle {
+	display: block;
+}
+
+/* #nav-toggle 切り替えアニメーション */
+
+.open #nav-toggle span:nth-child(1) {
+	top: 10px;
+	-webkit-transform: rotate(215deg);
+	-moz-transform: rotate(215deg);
+	transform: rotate(215deg);
+}
+.open #nav-toggle span:nth-child(2) {
+	width: 0;
+	left: 50%;
+}
+.open #nav-toggle span:nth-child(3) {
+	top: 10px;
+	-webkit-transform: rotate(-215deg);
+	-moz-transform: rotate(-215deg);
+	transform: rotate(-215deg);
+}
+
+/* #global-nav スライドアニメーション */
+.open #global-nav {
+	/* #global-nav top + #mobile-head height */
+	-moz-transform: translateY(556px);
+	-webkit-transform: translateY(556px);
+	transform: translateY(556px);
+}
+
+
+}
+
+@media screen and (min-width: 1200px) {
+#top-head {
+	display: none;
+}
+}
+
+
+/*ACCORDION*/
+div.accordion {
+	width: 100%;
+}
+div.accordion > ul > li > a {
+	display: block;
+	color: #000000;
+	font-size: 10px;
+	text-decoration: none;
+	background-color: rgba(255,255,255,0.1);
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	padding: 5px 10px;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+}
+div.accordion > ul > li > a:hover{
+	background-color: rgba(255,255,255,0.1);
+}
+div.accordion > ul > li > a:after, div.accordion > ul > li > a.active:after{
+	font-size: 10px;
+	position: absolute;
+	right: 12px;
+	top: 16px;
+	color: #000000;
+}
+div.accordion > ul > li > a:after{
+	content: "";
+}
+div.accordion > ul > li > a.active:after{
+	content: "";
+}
+div.accordion > ul > li > ul {
+	display: none;
+}
+div.accordion > ul > li > ul > li > a{
+	display: block;
+	color: #000000;
+	font-size: 10px;
+	background-color: rgba(0,0,0,0.1);
+	border-bottom: 1px solid #CCC;
+	padding: 5px 10px;
+	position: relative;
+}
+div.accordion > ul > li > ul > li > a:hover{
+	background-color: #CCC;
+}
+
+.header_space {
+	margin-top: 41px;
+}
+@media screen and (min-width: 1200px) {
+.header_space {
+	margin-top: 51px;
+}
+}
+
+
+/*PC版　グローバルメニュー*/
+#global {
+	margin: auto;
+	z-index: 10000;
+	min-width: 1040px;
+	background-color: rgba(255,255,255,1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+	border-bottom: 1px #cccccc solid;	
+	transition: .7s;	
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu img {
+	width: 150px;
+	padding: 2px 0px;
+	margin-right: 100px;
+	float: left;
+}
+
+.menu > li {
+    float: left;
+    width: 11%;
+    height: 50px;
+    line-height: 50px;
+	list-style: none;
+	text-align: center;
+	font-size: 10px;
+	letter-spacing: 3px;
+}
+.menu > li:hover {
+	background-color: rgba(255,255,255,0.6);
+}
+
+.menu > li a {
+    display: block;
+    color: #666;
+	text-decoration: none;
+	letter-spacing: 2px;
+	font-family: 'Montserrat', sans-serif;	
+}
+
+.menu > li a:hover {
+    color: #000000;
+}
+
+ul.menu__second-level {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10000;
+}
+
+ul.menu__third-level {
+    visibility: hidden;
+    opacity: 0;
+}
+
+ul.menu__fourth-level {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu > li:hover {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.menu__second-level li {
+    border-top: 1px solid #fff;
+	background-color: rgba(102,102,102,0.8);
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+	letter-spacing: 3px;
+	text-decoration: none;			
+}
+
+.menu__third-level li {
+    border-top: 1px solid #000;
+}
+.menu__second-level li a {
+	color: #FFF;
+}
+.menu__second-level li a:hover {
+    background: #fff;
+	background-color: rgba(255,255,255,0.8);
+}
+
+.menu__third-level li a:hover {
+    background: #fff;
+}
+
+.menu__fourth-level li a:hover {
+    background: #fff;
+}
+.menu > li.menu__single {
+    position: relative;
+}
+
+li.menu__single ul.menu__second-level {
+    overflow: hidden;
+    top: 40px;
+    width: 100%;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  transition: .2s;
+    text-align: left;
+}
+
+li.menu__single:hover ul.menu__second-level {
+    top: 50px;
+    visibility: visible;
+    opacity: 1;
+	list-style: none;
+}
+
+/* 下矢印 */
+.init-bottom:after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 0 0 15px;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* floatクリア */
+.menu:before,
+.menu:after {
+    content: " ";
+    display: table;
+}
+
+.menu:after {
+    clear: both;
+}
+
+.menu {
+    *zoom: 1;
+}
+
+@media screen and (max-width: 1200px) {
+#global {
+	display:none;
+}	
+}
+
+
+/*-----------------------------------------------------------------
+サイドバー
+-----------------------------------------------------------------*/
+
+#page-top {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	font-size: 80%;
+	z-index: 10000;
+}
+#page-top a {
+	text-decoration: none;
+	color: #fff;
+	width: 80px;
+	height: 60px;
+	padding: 0px 0;
+	padding-top: 30px;
+	text-align: center;
+	display: block;
+	opacity: 0.6;	
+	
+}
+.arrow{
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+}
+.arrow::before{
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 0px;
+  border-top: solid 2px #999999;
+  border-right: solid 2px #999999;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -4px;
+}
+#page-top a:hover {
+	text-decoration: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+#page-top {
+	position: fixed;
+	bottom: 30px;
+	right: 10px;
+	font-size: 80%;
+	z-index: 10000;
+
+}
+#page-top a {
+	text-decoration: none;
+	color: #fff;
+	width: 60px;
+	height: 50px;
+	padding: 0px 0;
+	padding-top: 10px;
+	text-align: center;
+	display: block;
+	opacity: 0.6;	
+	
+}
+.arrow{
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+}
+.arrow::before{
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  border-top: solid 1px #999999;
+  border-right: solid 1px #999999;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: 15px;
+}
+#page-top a:hover {
+	text-decoration: none;
+}	
+	
+}
+
+/*-----------------------------------------------------------------
+フレキシブルボックス
+-----------------------------------------------------------------*/
+
+.wrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;	
+	width: 100%;	
+}
+
+.wrapper_2 {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;	
+	width: 100%;	
+}
+
+.element_1 {
+	width: 50%;
+	text-align: center;
+}
+
+.element_2 {
+	width: 33%;
+	text-align: center;
+}
+
+.element_3 {
+	width: 25%;
+	text-align: center;
+}
+
+.element_4 {
+	width: 33%;
+	text-align: center;
+}
+
+.element_5 {
+	width: 33%;
+	text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+.element_1 {
+	width: 100%;
+	text-align: center;	
+}
+
+.element_2 {
+	width: 50%;
+	text-align: center;
+}
+
+.element_3 {
+	width: 50%;
+	text-align: center;
+}
+
+.element_4 {
+	width: 100%;
+	text-align: center;
+}
+
+.element_5 {
+	width: 50%;
+	text-align: center;
+}
+
+}
+
+
+
+
+/*-----------------------------------------------------------------
+トップ
+-----------------------------------------------------------------*/
+
+.top_base {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.top_negic_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_negic_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_valten_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_valten_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_double7_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_double7_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_stpoplar_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_stpoplar_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_laftel_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_laftel_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_xoxo_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_xoxo_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_staff_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/top_staff_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_shopc_bg_in {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.top_shop_box {
+	text-align: center;
+	font-size: 80%;
+	line-height: 1.7em;
+}
+.top_shop_box img {
+	width: 100px;
+	margin-bottom: 30px;
+}
+
+.top_shop_box_button {
+	margin: auto;
+	width: 200px;
+	line-height: 1em;
+	padding-top: 40px;
+}
+
+.top_staff_title {
+	font-size: 160%;
+	font-weight: 600;
+	margin-bottom: 30px;	
+}
+.top_staff_box {
+	text-align: center;
+	font-size: 80%;
+	line-height: 1.7em;
+}
+
+@media screen and (max-width: 1200px) {
+.top_base {
+	width: 100%;
+	margin-top: 50px;
+	margin: 0 auto;	
+}
+
+.top_negic_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_negic_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_valten_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_valten_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_double7_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_double7_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_stpoplar_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_stpoplar_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_laftel_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_laftel_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_xoxo_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_xoxo_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_staff_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-blend-mode: screen ;
+	background: url(../img/top_staff_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.top_shopc_bg_in {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.top_shop_box {
+	text-align: center;
+	font-size: 70%;
+	line-height: 1.7em;
+}
+.top_shop_box img {
+	width: 90px;
+}	
+
+.top_staff_box {
+	text-align: center;
+	font-size: 70%;
+	line-height: 1.7em;
+}
+
+}
+
+
+
+
+
+/*-----------------------------------------------------------------
+フッター
+-----------------------------------------------------------------*/
+
+#footer {
+	background-color: #fff;
+	text-align: center;
+	color: #666;
+	font-size: 70%;	
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 30px;
+}
+#footer img {
+	height: 90px;
+	margin: 0px 10px;
+}
+#footer a {
+	color: #FFF;
+}
+#footer p {
+	font-size: 80%;
+	margin-top: 50px;
+	text-align: center;
+	color: #666;
+}
+.footer_in {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.inline-block {
+	text-align: center;
+}
+.inline-block li {
+	display: inline-block;
+}
+
+@media screen and (max-width: 1200px) {
+
+#footer img {
+	height: 50px;
+	margin: 10px 5px 0px;
+}
+.footer_in {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.inline-block {
+	text-align: center;
+}
+.inline-block li {
+	display: inline-block;
+}
+.top_footer_button_2 {
+	margin-top: 20px;
+}	
+}
+
+
+
+
+/*-----------------------------------------------------------------
+求人ページ 共通部分
+-----------------------------------------------------------------*/
+
+.page_base {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.rec_pay_area {
+	text-align: center;
+	padding: 80px 0px;
+}
+
+.rec_pay_box {
+	width: 450px;
+	margin: 0 auto;
+}
+.rec_pay_box_2 {
+	width: 500px;
+	margin: 0 auto;
+}
+.rec_pay_a {
+	float: left;
+}
+.rec_pay_b {
+	margin-left: 50px;
+}
+.rec_pay_1 {
+	color: #000;
+	font-size: 200%;
+	font-weight: 300;
+	margin-bottom: 10px; 
+}
+.rec_pay_1_staff {
+	color: #000;
+	font-size: 170%;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.rec_pay_2 {
+	color: #ff0033;
+	font-size: 600%;
+	font-weight: 300;
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+.rec_pay_2_staff {
+	color: #ff0033;
+	font-size: 550%;
+	font-weight: 300;
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+.rec_pay_3 {
+	font-size: 50%;
+}
+
+.rec_pay_4 {
+	font-size: 100%;
+	margin: 20px 0px;
+}
+.rec_pay_5 {
+	font-size: 120%;
+}
+
+.rec_pay_6 {
+	color: #000;
+	font-size: 120%;
+	font-weight: 600;
+	margin-top: 40px;
+}
+.rec_pay_7 {
+	font-size: 140%;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+
+.rec_work_in {
+	width: 1200px;
+	margin: 0 auto;	
+}
+
+.rec_work_box {
+	background: #FFF;
+	padding: 50px 20px;
+	text-align: center;
+	margin: 0px 20px 20px 20px;
+}
+.rec_work_box_title {
+	font-size: 110%;
+	color: #664f29;
+	margin-bottom: 30px;
+	font-weight: 600;
+}
+.rec_work_box_naiyou {
+	font-size: 70%;
+	line-height: 1.7em;
+	color: #333;
+}
+.rec_work_box_naiyou_2 {
+	font-size: 70%;
+	line-height: 1.7em;
+	color: #333;
+	padding-bottom: 30px;
+}
+.rec_work_box_naiyou_3 {
+	font-size: 120%;
+	color: #664f29;
+	font-weight: 600;
+}
+.rec_work_box_bar {
+	margin: 0 auto;
+	border-top: 1px #664f29 solid;
+	width: 100px;
+	padding-bottom: 30px;
+}
+
+.rec_contact_button {
+	margin: 0 auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	width: 30%;
+}
+
+@media screen and (max-width: 1200px) {
+.page_base {
+	width: 100%;
+	margin-top: 50px;
+	margin: 0 auto;	
+}
+
+.rec_pay_box {
+	width: 300px;
+	margin: 0 auto;
+}
+.rec_pay_box_2 {
+	width: 300px;
+	margin: 0 auto;
+}
+.rec_pay_a {
+	float: left;
+}
+.rec_pay_b {
+	margin-left: 50px;
+}
+.rec_pay_1 {
+	color: #000;
+	font-size: 150%;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.rec_pay_1_staff {
+	color: #000;
+	font-size: 140%;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.rec_pay_2 {
+	color: #ff0033;
+	font-size: 400%;
+	font-weight: 300;
+	padding-top: 15px;
+	padding-bottom: 20px;	
+}
+.rec_pay_2_staff {
+	color: #ff0033;
+	font-size: 400%;
+	font-weight: 300;
+	padding-top: 15px;
+	padding-bottom: 20px;	
+}
+.rec_pay_3 {
+	font-size: 50%;
+}
+
+.rec_work_box_naiyou {
+	font-size: 70%;
+	line-height: 1.7em;
+	color: #333;
+	text-align: left;
+}
+.rec_work_box_naiyou_2 {
+	font-size: 70%;
+	line-height: 1.7em;
+	color: #333;
+	padding-bottom: 30px;
+	text-align: left;
+}
+
+.rec_work_in {
+	width: 100%;
+	margin: 0 auto;	
+}
+
+.rec_contact_button {
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 80%;
+}
+}
+
+/*-----------------------------------------------------------------
+プレミアムサポート　部分　共通
+-----------------------------------------------------------------*/
+
+.rec_support_title {
+	font-size: 150%;
+	font-family: 'Montserrat', sans-serif;
+	color: #333;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	text-align: center;	
+}
+
+.rec_support_video {
+	text-align: center;
+	margin-bottom: 50px;
+}
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+.rec_support_box {
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.rec_support_box_title {
+	font-size: 100%;
+	margin: 20px 0px;
+	color: #664f29;
+}
+.rec_support_box_naiyou {
+	font-size: 80%;
+	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+.rec_support_box {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.rec_support_box_title {
+	font-size: 80%;
+	margin: 20px 0px;
+	color: #664f29;
+}
+.rec_support_box_naiyou {
+	font-size: 60%;
+	text-align: left;
+	line-height: 1.5em;
+}
+}
+
+/*-----------------------------------------------------------------
+待遇　部分　共通
+-----------------------------------------------------------------*/
+
+.rec_taiguu_area {
+	background: #f2f2f2;
+	margin: 50px 0px;
+	padding: 50px 0px;
+}
+.rec_taiguu_box {
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.rec_taiguu_box_title {
+	font-size: 100%;
+	margin: 20px 0px;
+	color: #333333;
+}
+.rec_taiguu_box_naiyou {
+	font-size: 80%;
+	text-align: center;
+}
+
+.rec_tyuumoku_title {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-size: 200%;
+	color: #ff0033;
+}
+.rec_tyuumoku_naiyou {
+	font-size: 80%;
+	text-align: center;
+	margin-bottom: 40px;	
+}
+.rec_tyuumoku_img {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.rec_tyuumoku_img img {
+	width: 800px;
+}
+
+.rec_youkou {
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+.rec_taiguu_box {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.rec_taiguu_box_title {
+	font-size: 80%;
+	margin: 20px 0px;
+	color: #333333;
+}
+.rec_taiguu_box_naiyou {
+	font-size: 60%;
+	text-align: left;
+	line-height: 1.5em;
+}
+
+.rec_tyuumoku_img img {
+	width: 100%;
+}
+
+.rec_youkou {
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+}
+
+/*-----------------------------------------------------------------
+コメント　部分　共通
+-----------------------------------------------------------------*/
+
+.rec_comment_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-blend-mode: screen ;
+	background: url(../img/rec_comment_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+.rec_comment_in {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.rec_comment_title {
+	font-size: 150%;
+	margin-bottom: 20px;
+	text-align: left;
+}
+.rec_comment_naiyou {
+	font-size: 80%;
+	text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
+.rec_comment_in {
+	width: 100%;
+	margin: 0 auto;
+}	
+}
+
+/*-----------------------------------------------------------------
+お問合せページ
+-----------------------------------------------------------------*/
+
+.contact_title {
+	background: #333;
+	color: #FFF;
+	font-size: 200%;
+	text-align: center;
+	padding: 40px 0px;
+	margin-bottom: 50px;
+}
+
+.contact_page_box {
+	margin-bottom: 100px;
+}
+.contact_page_box_title {
+	font-size: 110%;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 5px;
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+.contact_page_1 {
+	font-size: 140%;
+	margin-bottom: 50px;
+	font-weight: 600;
+}
+.contact_page_1 img {
+	height: 20px;
+	margin-right: 10px;
+}
+.contact_page_1 a:hover {
+	opacity: 0.5;
+}
+
+.contact_page_box_naiyou {
+	font-size: 80%;
+	line-height: 2em;
+	margin-top: 100px;
+}
+
+@media screen and (min-width: 1200px) {
+.contactpage_button {
+	display: none;
+}	
+}
+@media screen and (max-width: 1200px) {
+.contact_pc {
+	display: none;	
+}
+
+.contactpage_button {
+	margin-bottom: 20px;
+}
+}
+
+/*-----------------------------------------------------------------
+VALTEN
+-----------------------------------------------------------------*/
+
+.rec_valten_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/valten_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+/*-----------------------------------------------------------------
+ネギック
+-----------------------------------------------------------------*/
+
+.rec_negic_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/negic_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+/*-----------------------------------------------------------------
+エピック
+-----------------------------------------------------------------*/
+
+.rec_epic_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/epic_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+
+/*-----------------------------------------------------------------
+ダブルセブン
+-----------------------------------------------------------------*/
+
+.rec_double7_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/double7_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+/*-----------------------------------------------------------------
+セントポプラ
+-----------------------------------------------------------------*/
+
+.rec_stpoplar_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/stpoplar_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+/*-----------------------------------------------------------------
+ラフテル
+-----------------------------------------------------------------*/
+
+.rec_laftel_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/laftel_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+/*-----------------------------------------------------------------
+XOXO
+-----------------------------------------------------------------*/
+
+.rec_xoxo_bg {
+	text-align: center;
+	color: #FFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-blend-mode: screen ;
+	background: url(../img/xoxo_bg.png);
+	background-color: rgba(0,0,0,1);		
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat; 
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+
+
+
+
+/*-----------------------------------------------------------------
+スタッフ求人
+-----------------------------------------------------------------*/
+
+
+
+
+
+/*-----------------------------------------------------------------
+写真
+-----------------------------------------------------------------*/
+
+.my-gallery {
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+}
+
+
+
+/*-----------------------------------------------------------------
+ボタン関連
+-----------------------------------------------------------------*/
+
+.button_area {
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	width: 600px;
+}
+@media screen and (max-width: 1200px) {
+.button_area {
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	width: 250px;
+}
+}
+
+a.btn_1 {
+	font-size: 90%;
+	color: #000;
+	background: rgba(255,255,255,1);
+	text-align: center;
+	padding: 15px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	font-family: 'Montserrat', sans-serif;
+}
+a.btn_1:hover {
+	font-size: 90%;
+	color: #000;
+	background: #ccc;
+	text-align: center;
+	padding: 15px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	font-family: 'Montserrat', sans-serif;
+}
+
+a.btn_2 {
+	font-size: 120%;
+	color: #ffffff;
+	background: rgba(102,79,41,1);
+	text-align: center;
+	padding: 40px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+}
+a.btn_2:hover {
+	font-size: 120%;
+	color: #fff;
+	background: #333;
+	text-align: center;
+	padding: 40px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 1200px) {
+
+a.btn_2 {
+	font-size: 90%;
+	color: #ffffff;
+	background: rgba(102,79,41,1);
+	text-align: center;
+	padding: 30px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+}
+a.btn_2:hover {
+	font-size: 90%;
+	color: #fff;
+	background: #333;
+	text-align: center;
+	padding: 30px 0px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+}
+}
+
+a.btn_3 {
+	width: 200px;
+	font-size: 100%;
+	font-weight: 600;
+	color: #fff;
+	line-height: 1.5em;
+	text-align: center;
+	padding: 20px 0;
+	margin: 0 auto;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	background: #666;
+	white-space: nowrap;
+}
+a.btn_3:hover {
+	background: #999;
+}
+
+a.btn_4 {
+	width: 200px;
+	font-size: 100%;
+	font-weight: 600;
+	color: #fff;
+	line-height: 1.5em;
+	text-align: center;
+	padding: 20px 0;
+	margin: 0 auto;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	background: #00c200;
+	white-space: nowrap;
+}
+a.btn_4:hover {
+	background: #98e598;
+}
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------
+テーブルタグ
+-----------------------------------------------------------------*/
+
+table {
+	border-collapse: collapse;
+	width: 100%;	
+}
+table td.t_td1 {
+	border-bottom: 1px #CCCCCC solid;
+	padding: 15px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 80%;
+	line-height: 1.5em;
+	width: 30%;
+	letter-spacing: 3px;
+	word-break:break-all; 
+}
+table td.t_td2 {
+	border-bottom: 1px #CCCCCC solid;
+	padding: 15px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 80%;
+	line-height: 1.5em;
+	width: 70%;
+	letter-spacing: 3px;
+	word-break:break-all; 
+}
+
+@media screen and (max-width: 1200px) {
+table {
+	border-collapse: collapse;
+	max-width: 100%;		
+}
+table td.t_td1 {
+	border-bottom: 1px #CCCCCC solid;
+	padding: 15px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 70%;
+	line-height: 1.5em;
+	width: 30%;
+	letter-spacing: 3px;
+	word-break:break-all; 
+}
+table td.t_td2 {
+	border-bottom: 1px #CCCCCC solid;
+	padding: 15px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 70%;
+	line-height: 1.5em;
+	width: 70%;
+	letter-spacing: 3px;
+	word-break:break-all; 
+}
+}
+
+
+
+
+
+
+
+
+

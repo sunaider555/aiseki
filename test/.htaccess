@@ -1,0 +1,8 @@
+ErrorDocument 404 http://aiseki-sakaba.com/
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^(.*)index.php$ http://aiseki-sakaba.com/$1 [R=301,L]
+<Files ~ "\.(html|php|jpe?g|gif|png)$">
+Header set Pragma no-cache
+Header set Cache-Control no-cache
+</Files>
